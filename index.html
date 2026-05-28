@@ -6,17 +6,46 @@
   <title>Real Talk: Cannabis & Addiction Awareness</title>
   <style>
     :root {
-      --green:   #2d6a4f;
-      --green-lt:#52b788;
-      --yellow:  #f4c430;
-      --red:     #d62828;
-      --dark:    #111827;
-      --mid:     #1f2937;
-      --soft:    #374151;
-      --text:    #e5e7eb;
-      --white:   #ffffff;
-      --card-bg: #1f2937;
-      --accent:  #a7f3d0;
+      --green:        #2d6a4f;
+      --green-lt:     #52b788;
+      --yellow:       #f4c430;
+      --red:          #d62828;
+      --dark:         #111827;
+      --mid:          #1f2937;
+      --soft:         #374151;
+      --text:         #e5e7eb;
+      --white:        #ffffff;
+      --card-bg:      #1f2937;
+      --accent:       #a7f3d0;
+      --text-muted:   #9ca3af;
+      --text-subtle:  #6b7280;
+      --text-dim:     #4b5563;
+      --footer-bg:    #0d1117;
+      --inner-card:   #374151;
+      --pros-bg:      #1a2e24;
+      --cons-bg:      #2a1a1a;
+      --nav-bg:       rgba(17,24,39,.92);
+      --nav-border:   #374151;
+    }
+
+    [data-theme="light"] {
+      --green:        #166534;
+      --green-lt:     #16a34a;
+      --dark:         #ffffff;
+      --mid:          #f3f4f6;
+      --soft:         #d1d5db;
+      --text:         #111827;
+      --card-bg:      #ffffff;
+      --accent:       #166534;
+      --text-muted:   #4b5563;
+      --text-subtle:  #9ca3af;
+      --text-dim:     #6b7280;
+      --footer-bg:    #e5e7eb;
+      --inner-card:   #f3f4f6;
+      --pros-bg:      #f0fdf4;
+      --cons-bg:      #fef2f2;
+      --nav-bg:       rgba(255,255,255,.95);
+      --nav-border:   #e5e7eb;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,9 +64,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(17,24,39,.92);
+      background: var(--nav-bg);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #374151;
+      border-bottom: 1px solid var(--nav-border);
       padding: .75rem 1.5rem;
       display: flex;
       justify-content: space-between;
@@ -109,7 +138,7 @@
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       max-width: 580px;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
@@ -130,7 +159,7 @@
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border: 2px solid #4b5563;
+      border: 2px solid var(--soft);
     }
     .btn-outline:hover { border-color: var(--green-lt); color: var(--green-lt); }
 
@@ -143,13 +172,13 @@
       flex-direction: column;
       align-items: center;
       gap: .4rem;
-      color: #4b5563;
+      color: var(--text-dim);
       font-size: .8rem;
     }
     .scroll-arrow {
       width: 20px; height: 20px;
-      border-right: 2px solid #4b5563;
-      border-bottom: 2px solid #4b5563;
+      border-right: 2px solid var(--text-dim);
+      border-bottom: 2px solid var(--text-dim);
       transform: rotate(45deg);
       animation: bounce 1.5s ease-in-out infinite;
     }
@@ -175,7 +204,7 @@
     }
     .lead {
       font-size: 1.05rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       max-width: 620px;
       margin-bottom: 3rem;
     }
@@ -188,7 +217,7 @@
     }
     .stat-card {
       background: var(--card-bg);
-      border: 1px solid #374151;
+      border: 1px solid var(--soft);
       border-radius: 1rem;
       padding: 2rem 1.5rem;
       text-align: center;
@@ -202,7 +231,7 @@
       line-height: 1;
       margin-bottom: .4rem;
     }
-    .stat-desc { font-size: .9rem; color: #9ca3af; }
+    .stat-desc { font-size: .9rem; color: var(--text-muted); }
 
     /* ── BRAIN / SCIENCE SECTION ── */
     .science-section { background: var(--mid); }
@@ -242,7 +271,7 @@
       font-size: .85rem;
     }
     .step-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: .2rem; }
-    .step-text p  { font-size: .9rem; color: #9ca3af; }
+    .step-text p  { font-size: .9rem; color: var(--text-muted); }
 
     /* ── MYTHS VS FACTS ── */
     .myths-grid {
@@ -254,7 +283,7 @@
       background: var(--card-bg);
       border-radius: 1rem;
       overflow: hidden;
-      border: 1px solid #374151;
+      border: 1px solid var(--soft);
     }
     .myth-header {
       padding: .6rem 1.2rem;
@@ -285,7 +314,7 @@
     }
     .sign-icon { font-size: 1.5rem; flex-shrink: 0; }
     .sign-title { font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
-    .sign-desc  { font-size: .85rem; color: #9ca3af; }
+    .sign-desc  { font-size: .85rem; color: var(--text-muted); }
 
     /* ── IMPACT TIMELINE ── */
     .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
@@ -314,7 +343,7 @@
       flex-shrink: 0;
     }
     .timeline-content h4 { font-weight: 700; margin-bottom: .3rem; }
-    .timeline-content p  { font-size: .9rem; color: #9ca3af; }
+    .timeline-content p  { font-size: .9rem; color: var(--text-muted); }
 
     /* ── HELP SECTION ── */
     .help-section {
@@ -336,8 +365,23 @@
     }
     .help-card:hover { border-color: var(--green-lt); }
     .help-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      background: var(--inner-card);
+      border: 1px solid var(--soft);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .3rem .9rem;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      font-family: inherit;
+    }
+    .theme-toggle:hover { border-color: var(--green-lt); color: var(--green-lt); }
     .help-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
-    .help-card p  { font-size: .9rem; color: #9ca3af; margin-bottom: 1rem; }
+    .help-card p  { font-size: .9rem; color: var(--text-muted); margin-bottom: 1rem; }
     .help-card a {
       color: var(--green-lt);
       font-weight: 700;
@@ -369,7 +413,7 @@
       gap: .75rem;
       align-items: flex-start;
       font-size: .9rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       padding: .8rem 1rem;
       background: var(--card-bg);
       border-radius: .5rem;
@@ -386,14 +430,14 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #0d1117;
+      background: var(--footer-bg);
       text-align: center;
       padding: 2rem 1.5rem;
       font-size: .85rem;
-      color: #4b5563;
-      border-top: 1px solid #1f2937;
+      color: var(--text-dim);
+      border-top: 1px solid var(--mid);
     }
-    footer strong { color: #6b7280; }
+    footer strong { color: var(--text-subtle); }
 
     /* ── PROGRESS BAR ── */
     #progress-bar {
@@ -431,7 +475,7 @@
       color: var(--text);
       transition: background .15s, border-color .15s;
     }
-    .quiz-option:hover { background: #4b5563; }
+    .quiz-option:hover { background: var(--soft); }
     .quiz-option.correct { border-color: var(--green-lt); background: rgba(82,183,136,.15); }
     .quiz-option.wrong   { border-color: var(--red);      background: rgba(214,40,40,.15); }
     .quiz-feedback {
@@ -445,7 +489,7 @@
       align-items: center;
       margin-top: 1.5rem;
     }
-    #quiz-score { font-size: .95rem; color: #9ca3af; }
+    #quiz-score { font-size: .95rem; color: var(--text-muted); }
 
     @media (max-width: 500px) {
       .nav-links { display: none; }
@@ -471,6 +515,7 @@
     <li><a href="#help">Get Help</a></li>
     <li><a href="#sources">Sources</a></li>
   </ul>
+  <button class="theme-toggle" id="theme-toggle">Light Mode</button>
 </nav>
 
 <!-- HERO -->
@@ -542,8 +587,8 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
 
       <!-- High School -->
-      <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;overflow:hidden;">
-        <div style="background:rgba(82,183,136,.15);border-bottom:1px solid #374151;padding:1rem 1.5rem;">
+      <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;overflow:hidden;">
+        <div style="background:rgba(82,183,136,.15);border-bottom:1px solid var(--soft);padding:1rem 1.5rem;">
           <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">High School</div>
           <div style="font-size:1.15rem;font-weight:700;margin-top:.2rem;">Usage by grade (past year)</div>
         </div>
@@ -553,7 +598,7 @@
             <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.4rem;">
               <span>12th grade</span><strong style="color:var(--green-lt);">26%</strong>
             </div>
-            <div style="background:#374151;border-radius:999px;height:8px;">
+            <div style="background:var(--inner-card);border-radius:999px;height:8px;">
               <div style="background:var(--green-lt);width:26%;height:100%;border-radius:999px;"></div>
             </div>
           </div>
@@ -561,7 +606,7 @@
             <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.4rem;">
               <span>10th grade</span><strong style="color:var(--green-lt);">16%</strong>
             </div>
-            <div style="background:#374151;border-radius:999px;height:8px;">
+            <div style="background:var(--inner-card);border-radius:999px;height:8px;">
               <div style="background:var(--green-lt);width:16%;height:100%;border-radius:999px;"></div>
             </div>
           </div>
@@ -569,44 +614,44 @@
             <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.4rem;">
               <span>8th grade</span><strong style="color:var(--green-lt);">7%</strong>
             </div>
-            <div style="background:#374151;border-radius:999px;height:8px;">
+            <div style="background:var(--inner-card);border-radius:999px;height:8px;">
               <div style="background:var(--green-lt);width:7%;height:100%;border-radius:999px;"></div>
             </div>
           </div>
-          <div style="border-top:1px solid #374151;padding-top:1rem;display:flex;flex-direction:column;gap:.7rem;">
-            <div style="font-size:.9rem;color:#9ca3af;"><strong style="color:var(--text);">5.1%</strong> of 12th graders use cannabis daily (20+ days/month)</div>
-            <div style="font-size:.9rem;color:#9ca3af;">Average age of first use: <strong style="color:var(--text);">around 15</strong></div>
-            <div style="font-size:.9rem;color:#9ca3af;">A review of <strong style="color:var(--text);">63 studies / 440,000 teens</strong> found cannabis use linked to lower grades, more absences, higher dropout rates, and lower odds of finishing high school or enrolling in college</div>
-            <div style="font-size:.9rem;color:#9ca3af;">Starting before <strong style="color:var(--text);">age 15</strong> is tied to worse long term physical and mental health outcomes</div>
+          <div style="border-top:1px solid var(--soft);padding-top:1rem;display:flex;flex-direction:column;gap:.7rem;">
+            <div style="font-size:.9rem;color:var(--text-muted);"><strong style="color:var(--text);">5.1%</strong> of 12th graders use cannabis daily (20+ days/month)</div>
+            <div style="font-size:.9rem;color:var(--text-muted);">Average age of first use: <strong style="color:var(--text);">around 15</strong></div>
+            <div style="font-size:.9rem;color:var(--text-muted);">A review of <strong style="color:var(--text);">63 studies / 440,000 teens</strong> found cannabis use linked to lower grades, more absences, higher dropout rates, and lower odds of finishing high school or enrolling in college</div>
+            <div style="font-size:.9rem;color:var(--text-muted);">Starting before <strong style="color:var(--text);">age 15</strong> is tied to worse long term physical and mental health outcomes</div>
           </div>
         </div>
       </div>
 
       <!-- College -->
-      <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;overflow:hidden;">
-        <div style="background:rgba(244,196,48,.1);border-bottom:1px solid #374151;padding:1rem 1.5rem;">
+      <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;overflow:hidden;">
+        <div style="background:rgba(244,196,48,.1);border-bottom:1px solid var(--soft);padding:1rem 1.5rem;">
           <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);">College</div>
           <div style="font-size:1.15rem;font-weight:700;margin-top:.2rem;">Use is going up. So are the consequences.</div>
         </div>
         <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
           <!-- Usage trend -->
-          <div style="display:flex;gap:1.5rem;align-items:center;padding:.9rem;background:#374151;border-radius:.5rem;">
+          <div style="display:flex;gap:1.5rem;align-items:center;padding:.9rem;background:var(--inner-card);border-radius:.5rem;">
             <div style="text-align:center;">
-              <div style="font-size:1.6rem;font-weight:900;color:#9ca3af;">32%</div>
-              <div style="font-size:.75rem;color:#6b7280;">2018</div>
+              <div style="font-size:1.6rem;font-weight:900;color:var(--text-muted);">32%</div>
+              <div style="font-size:.75rem;color:var(--text-subtle);">2018</div>
             </div>
             <div style="flex:1;height:3px;background:linear-gradient(to right,#9ca3af,var(--yellow));border-radius:999px;"></div>
             <div style="text-align:center;">
               <div style="font-size:1.6rem;font-weight:900;color:var(--yellow);">40%</div>
-              <div style="font-size:.75rem;color:#6b7280;">2021</div>
+              <div style="font-size:.75rem;color:var(--text-subtle);">2021</div>
             </div>
           </div>
-          <div style="font-size:.85rem;color:#9ca3af;text-align:center;">College student use jumped 8 points in just 3 years</div>
-          <div style="border-top:1px solid #374151;padding-top:1rem;display:flex;flex-direction:column;gap:.7rem;">
-            <div style="font-size:.9rem;color:#9ca3af;">Daily users are <strong style="color:var(--red);">nearly 4x more likely</strong> to pull C+ or lower grades, which can put financial aid and enrollment at risk</div>
-            <div style="font-size:.9rem;color:#9ca3af;">Even just first year use can directly <strong style="color:var(--text);">push back graduation</strong> by years, mostly because it tanks attendance and GPA</div>
-            <div style="font-size:.9rem;color:#9ca3af;">Heavy use is tied to <strong style="color:var(--text);">anxiety, depression, and mood swings</strong> that make it even harder to stay on track academically</div>
-            <div style="font-size:.9rem;color:#9ca3af;">A survey of <strong style="color:var(--text);">14,000 students at 19 colleges</strong> found nearly 40% had used cannabis, with over 26% using right on campus</div>
+          <div style="font-size:.85rem;color:var(--text-muted);text-align:center;">College student use jumped 8 points in just 3 years</div>
+          <div style="border-top:1px solid var(--soft);padding-top:1rem;display:flex;flex-direction:column;gap:.7rem;">
+            <div style="font-size:.9rem;color:var(--text-muted);">Daily users are <strong style="color:var(--red);">nearly 4x more likely</strong> to pull C+ or lower grades, which can put financial aid and enrollment at risk</div>
+            <div style="font-size:.9rem;color:var(--text-muted);">Even just first year use can directly <strong style="color:var(--text);">push back graduation</strong> by years, mostly because it tanks attendance and GPA</div>
+            <div style="font-size:.9rem;color:var(--text-muted);">Heavy use is tied to <strong style="color:var(--text);">anxiety, depression, and mood swings</strong> that make it even harder to stay on track academically</div>
+            <div style="font-size:.9rem;color:var(--text-muted);">A survey of <strong style="color:var(--text);">14,000 students at 19 colleges</strong> found nearly 40% had used cannabis, with over 26% using right on campus</div>
           </div>
         </div>
       </div>
@@ -618,42 +663,42 @@
         <div style="font-size:.8rem;color:#fca5a5;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;">Teens who see regular use as risky</div>
         <div style="display:flex;gap:2rem;align-items:flex-end;">
           <div style="text-align:center;">
-            <div style="font-size:2.5rem;font-weight:900;color:#9ca3af;">58%</div>
-            <div style="font-size:.8rem;color:#6b7280;">2000</div>
+            <div style="font-size:2.5rem;font-weight:900;color:var(--text-muted);">58%</div>
+            <div style="font-size:.8rem;color:var(--text-subtle);">2000</div>
           </div>
-          <div style="font-size:1.5rem;color:#4b5563;padding-bottom:.5rem;">→</div>
+          <div style="font-size:1.5rem;color:var(--text-dim);padding-bottom:.5rem;">→</div>
           <div style="text-align:center;">
             <div style="font-size:2.5rem;font-weight:900;color:var(--red);">36%</div>
-            <div style="font-size:.8rem;color:#6b7280;">2024</div>
+            <div style="font-size:.8rem;color:var(--text-subtle);">2024</div>
           </div>
         </div>
       </div>
       <div style="flex:1;min-width:200px;">
         <div style="font-weight:700;margin-bottom:.4rem;">The risk didn't change. The perception did.</div>
-        <div style="font-size:.9rem;color:#9ca3af;">As weed got legalized in more states, teens stopped treating it like a big deal. But the science on brain development hasn't changed at all. Something being legal for adults doesn't mean it's safe for a 15 year old brain.</div>
+        <div style="font-size:.9rem;color:var(--text-muted);">As weed got legalized in more states, teens stopped treating it like a big deal. But the science on brain development hasn't changed at all. Something being legal for adults doesn't mean it's safe for a 15 year old brain.</div>
       </div>
     </div>
 
     <!-- Peer & social factors -->
-    <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;padding:1.8rem 2rem;">
+    <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;padding:1.8rem 2rem;">
       <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--green-lt);margin-bottom:.5rem;">Peer &amp; Social Media Pressure</div>
       <div style="font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;">The single biggest risk factor is who you're around</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-        <div style="background:#374151;border-radius:.5rem;padding:1rem;">
+        <div style="background:var(--inner-card);border-radius:.5rem;padding:1rem;">
           <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;">Friend networks</div>
-          <div style="font-size:.85rem;color:#9ca3af;">The strongest predictor of whether a teen uses cannabis is whether their friends do. It really is that simple. If the people around you use, your chances go way up.</div>
+          <div style="font-size:.85rem;color:var(--text-muted);">The strongest predictor of whether a teen uses cannabis is whether their friends do. It really is that simple. If the people around you use, your chances go way up.</div>
         </div>
-        <div style="background:#374151;border-radius:.5rem;padding:1rem;">
+        <div style="background:var(--inner-card);border-radius:.5rem;padding:1rem;">
           <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;">Social media exposure</div>
-          <div style="font-size:.85rem;color:#9ca3af;">Scrolling past weed content constantly on TikTok, Instagram, or YouTube makes it seem normal. Research shows it directly raises the chances that teens will try it.</div>
+          <div style="font-size:.85rem;color:var(--text-muted);">Scrolling past weed content constantly on TikTok, Instagram, or YouTube makes it seem normal. Research shows it directly raises the chances that teens will try it.</div>
         </div>
-        <div style="background:#374151;border-radius:.5rem;padding:1rem;">
+        <div style="background:var(--inner-card);border-radius:.5rem;padding:1rem;">
           <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;">Reduced oversight</div>
-          <div style="font-size:.85rem;color:#9ca3af;">When everything online treats weed as harmless or even cool, parents have no idea what their kids are actually being exposed to. That gap makes it a lot easier to start using.</div>
+          <div style="font-size:.85rem;color:var(--text-muted);">When everything online treats weed as harmless or even cool, parents have no idea what their kids are actually being exposed to. That gap makes it a lot easier to start using.</div>
         </div>
-        <div style="background:#374151;border-radius:.5rem;padding:1rem;">
+        <div style="background:var(--inner-card);border-radius:.5rem;padding:1rem;">
           <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;">Earlier start = higher risk</div>
-          <div style="font-size:.85rem;color:#9ca3af;">The earlier you start, the harder it is to stop. Starting before 16 makes cannabis use disorder significantly more severe, largely because peer habits get locked in young.</div>
+          <div style="font-size:.85rem;color:var(--text-muted);">The earlier you start, the harder it is to stop. Starting before 16 makes cannabis use disorder significantly more severe, largely because peer habits get locked in young.</div>
         </div>
       </div>
     </div>
@@ -709,7 +754,7 @@
       <div>
         <div class="section-label">Your Brain on Cannabis</div>
         <h2>Addiction is a brain thing, not a willpower thing</h2>
-        <p style="color:#9ca3af;margin-bottom:1.5rem;">THC, the thing that gets you high, goes straight for your brain's reward system. Here's exactly what happens when it does:</p>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">THC, the thing that gets you high, goes straight for your brain's reward system. Here's exactly what happens when it does:</p>
         <div class="science-steps">
           <div class="step">
             <div class="step-num">1</div>
@@ -803,88 +848,88 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
 
       <!-- PROS -->
-      <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;overflow:hidden;">
-        <div style="background:rgba(82,183,136,.15);border-bottom:1px solid #374151;padding:1rem 1.5rem;">
+      <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;overflow:hidden;">
+        <div style="background:rgba(82,183,136,.15);border-bottom:1px solid var(--soft);padding:1rem 1.5rem;">
           <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Pros</div>
           <div style="font-size:1.1rem;font-weight:700;margin-top:.2rem;">Why people use it</div>
         </div>
         <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
           <div style="display:flex;flex-direction:column;gap:.75rem;">
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Short term relaxation</div>
-              <div style="font-size:.85rem;color:#9ca3af;">THC triggers a dopamine release that creates genuine feelings of calm, euphoria, and reduced stress. This is real, which is a big part of why people keep coming back.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">THC triggers a dopamine release that creates genuine feelings of calm, euphoria, and reduced stress. This is real, which is a big part of why people keep coming back.</div>
             </div>
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Social bonding</div>
-              <div style="font-size:.85rem;color:#9ca3af;">Many users report feeling more connected and open around others. It's a big reason it spreads through friend groups.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">Many users report feeling more connected and open around others. It's a big reason it spreads through friend groups.</div>
             </div>
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Sleep aid</div>
-              <div style="font-size:.85rem;color:#9ca3af;">Some people find it helps them fall asleep faster, especially those dealing with stress or anxiety.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">Some people find it helps them fall asleep faster, especially those dealing with stress or anxiety.</div>
             </div>
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Medical pain relief</div>
-              <div style="font-size:.85rem;color:#9ca3af;">One of the most researched medical uses. Cannabis has shown real effectiveness for chronic pain management in adult patients under medical supervision.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">One of the most researched medical uses. Cannabis has shown real effectiveness for chronic pain management in adult patients under medical supervision.</div>
             </div>
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Reduces chemotherapy nausea</div>
-              <div style="font-size:.85rem;color:#9ca3af;">THC is used medically to reduce severe nausea in cancer patients undergoing chemotherapy, where other treatments haven't worked.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">THC is used medically to reduce severe nausea in cancer patients undergoing chemotherapy, where other treatments haven't worked.</div>
             </div>
-            <div style="padding:.9rem 1rem;background:#1a2e24;border-radius:.5rem;border-left:3px solid var(--green-lt);">
+            <div style="padding:.9rem 1rem;background:var(--pros-bg);border-radius:.5rem;border-left:3px solid var(--green-lt);">
               <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">FDA approved epilepsy treatment</div>
-              <div style="font-size:.85rem;color:#9ca3af;">CBD (a non-intoxicating component of cannabis) is FDA approved as Epidiolex to treat two rare, severe forms of epilepsy in children that don't respond to other medications.</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">CBD (a non-intoxicating component of cannabis) is FDA approved as Epidiolex to treat two rare, severe forms of epilepsy in children that don't respond to other medications.</div>
             </div>
           </div>
           <div style="background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.2);border-radius:.5rem;padding:.9rem 1rem;margin-top:.5rem;">
             <div style="font-size:.8rem;color:var(--accent);font-weight:700;">Important note</div>
-            <div style="font-size:.82rem;color:#9ca3af;margin-top:.3rem;">The medical benefits above are documented in controlled, adult, medically supervised settings. They do not apply to casual teen recreational use. Using cannabis recreationally as a teen is a very different thing from a doctor prescribing CBD to a child with epilepsy.</div>
+            <div style="font-size:.82rem;color:var(--text-muted);margin-top:.3rem;">The medical benefits above are documented in controlled, adult, medically supervised settings. They do not apply to casual teen recreational use. Using cannabis recreationally as a teen is a very different thing from a doctor prescribing CBD to a child with epilepsy.</div>
           </div>
         </div>
       </div>
 
       <!-- CONS -->
-      <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;overflow:hidden;">
-        <div style="background:rgba(214,40,40,.15);border-bottom:1px solid #374151;padding:1rem 1.5rem;">
+      <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;overflow:hidden;">
+        <div style="background:rgba(214,40,40,.15);border-bottom:1px solid var(--soft);padding:1rem 1.5rem;">
           <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fca5a5;">Cons</div>
           <div style="font-size:1.1rem;font-weight:700;margin-top:.2rem;">What it actually costs</div>
         </div>
         <div style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;">
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Addiction risk</div>
-            <div style="font-size:.85rem;color:#9ca3af;">1 in 6 teens who use it will develop a dependence disorder. That number rises to nearly 1 in 2 for daily users.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">1 in 6 teens who use it will develop a dependence disorder. That number rises to nearly 1 in 2 for daily users.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Memory and focus damage</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Regular use impairs short term memory, attention, and processing speed. In teens, some of these effects can become permanent.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Regular use impairs short term memory, attention, and processing speed. In teens, some of these effects can become permanent.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Mental health risks</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Regular use is linked to anxiety, depression, and in some cases psychosis, especially with high potency products. It can make existing mental health conditions significantly worse.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Regular use is linked to anxiety, depression, and in some cases psychosis, especially with high potency products. It can make existing mental health conditions significantly worse.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Academic and career impact</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Lower grades, higher dropout rates, delayed graduation. The research across 440,000 teens is consistent on this.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Lower grades, higher dropout rates, delayed graduation. The research across 440,000 teens is consistent on this.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Withdrawal is real</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Irritability, insomnia, anxiety, and loss of appetite when you stop. Officially recognized in the DSM 5. Can last up to two weeks.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Irritability, insomnia, anxiety, and loss of appetite when you stop. Officially recognized in the DSM 5. Can last up to two weeks.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Lung and heart strain</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Smoking cannabis irritates airways and raises heart rate significantly. Vaping's long term effects are still largely unknown.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Smoking cannabis irritates airways and raises heart rate significantly. Vaping's long term effects are still largely unknown.</div>
           </div>
-          <div style="padding:.9rem 1rem;background:#2a1a1a;border-radius:.5rem;border-left:3px solid var(--red);">
+          <div style="padding:.9rem 1rem;background:var(--cons-bg);border-radius:.5rem;border-left:3px solid var(--red);">
             <div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem;">Developing brain interference</div>
-            <div style="font-size:.85rem;color:#9ca3af;">Teen brains are still being built until age 25. THC directly disrupts that process in ways that don't affect adult users the same way.</div>
+            <div style="font-size:.85rem;color:var(--text-muted);">Teen brains are still being built until age 25. THC directly disrupts that process in ways that don't affect adult users the same way.</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Bottom line callout -->
-    <div style="background:var(--card-bg);border:1px solid #374151;border-radius:1rem;padding:1.8rem 2rem;text-align:center;">
+    <div style="background:var(--card-bg);border:1px solid var(--soft);border-radius:1rem;padding:1.8rem 2rem;text-align:center;">
       <div style="font-size:1.1rem;font-weight:700;margin-bottom:.6rem;">The short term pros are real. So are the long term cons.</div>
-      <div style="font-size:.95rem;color:#9ca3af;max-width:620px;margin:0 auto;">The reason cannabis spreads so easily is that the benefits happen first and feel immediate. The costs build up quietly over months and years. By the time most people notice, the habit is already hard to break.</div>
+      <div style="font-size:.95rem;color:var(--text-muted);max-width:620px;margin:0 auto;">The reason cannabis spreads so easily is that the benefits happen first and feel immediate. The costs build up quietly over months and years. By the time most people notice, the habit is already hard to break.</div>
     </div>
   </div>
 </section>
@@ -1145,6 +1190,26 @@
 </footer>
 
 <script>
+  /* ── Theme toggle ── */
+  const toggle = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    toggle.textContent = 'Dark Mode';
+  }
+  toggle.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      toggle.textContent = 'Light Mode';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      toggle.textContent = 'Dark Mode';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
   /* ── Scroll progress bar ── */
   window.addEventListener('scroll', () => {
     const el = document.getElementById('progress-bar');
